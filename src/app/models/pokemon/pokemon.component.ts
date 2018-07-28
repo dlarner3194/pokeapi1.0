@@ -12,10 +12,14 @@ export class PokemonComponent implements OnInit {
   constructor(private pokeApi: PokeapiService) { }
 
   ngOnInit() {
-    console.log('hello');
     this.pokeApi.getPokemon().subscribe(data => {
       this.results = data.name;
       console.log(this.results);
     });
+
+    this.pokeApi.getAllPokemon().subscribe(list => {
+      this.results = list;
+      console.log(this.results);
+    })
   }
 }

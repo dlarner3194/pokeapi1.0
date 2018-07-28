@@ -10,4 +10,8 @@ export class PokeapiService {
   getPokemon() {
     return this.http.get<any>('http://pokeapi.salestock.net/api/v2/pokemon/1/');
   }
+
+  getAllPokemon() {
+    return this.http.get<any>('http://pokeapi.salestock.net/api/v2/');
+  }
 }
